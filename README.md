@@ -43,7 +43,7 @@ Once everything is set up, run the following commands in your terminal to launch
 **Start Flask API** (Backend)
    ```bash
    python api.py
-
+   ```
 ### 2. **Interacting with the App**
 
 Once the Flask API is up and running, proceed with the following steps to interact with the application.
