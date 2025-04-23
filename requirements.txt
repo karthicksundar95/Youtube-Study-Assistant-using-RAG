@@ -1,0 +1,12 @@
+streamlit
+langchain
+langchain-community
+# huggingface_hub
+langchain-huggingface
+dotenv
+fastapi
+uvicorn
+langflow
+faiss-cpu
+senetence-transformers
+pandas
