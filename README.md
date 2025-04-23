@@ -40,7 +40,7 @@ To get started, make sure you have the following installed:
 
 Once everything is set up, run the following commands in your terminal to launch the back-end API and front-end interface:
 
-1. **Start Flask API** (Backend)
+**Start Flask API** (Backend)
    ```bash
    python api.py
 
@@ -48,17 +48,15 @@ Once everything is set up, run the following commands in your terminal to launch
 
 Once the Flask API is up and running, proceed with the following steps to interact with the application.
 
-#### Start Streamlit App (Frontend)
+**Start Streamlit App (Frontend)**
 
 1. Open a new terminal window and run the following command to start the **Streamlit front-end**:
 
    ```bash
    streamlit run app.py
 
-This will launch the Streamlit application and by default, it will be accessible at http://localhost:8501 on your browser.
+2. This will launch the Streamlit application and by default, it will be accessible at http://localhost:8501 on your browser.
 
-
-Streamlit user interface for interacting with the YouTube Study Assistant.
 
 3. Building the Knowledge Base
 In the sidebar of the Streamlit app, you will find a text input box where you can paste a YouTube URL.
@@ -95,6 +93,8 @@ The AI will generate a response based on the context from the video’s transcri
 
 6. Chat History
 As you interact with the app, the conversation history will be maintained. Both your queries and the assistant’s responses will be visible in the chat interface, providing a seamless experience for continuous interaction.
+
+---
 
 ## 🌟 Key Features
 
