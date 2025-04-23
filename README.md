@@ -147,7 +147,7 @@ YouTube-Study-Assistant/
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/YouTube-Study-Assistant.git
+   git clone https://github.com/karthicksundar95/Youtube-Study-Assistant-using-RAG.git
    cd YouTube-Study-Assistant
 2. Create virtual environment and activate:
 
