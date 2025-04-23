@@ -1,4 +1,4 @@
-# YouTube Study Assistant - README
+# YouTube Study Assistant using RAG LLM
 
 Welcome to the **YouTube Study Assistant** project! This system integrates YouTube videos with the power of AI to help you learn and interact with video content through intelligent question answering. The application consists of a **Streamlit** front-end that interacts with a **Flask API** for building a knowledge base from YouTube transcripts and responding to queries.
 
