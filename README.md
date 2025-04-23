@@ -289,3 +289,6 @@ Whether you're:
 - A student 🧑‍🎓 revising for exams
 - A curious learner 💡
 - Or a developer exploring RAG pipelines 🛠️
+
+### Flow Chart (Psuedo code)
+[Psuedo code flow chart](./code2flow_wKpduY.svg)
