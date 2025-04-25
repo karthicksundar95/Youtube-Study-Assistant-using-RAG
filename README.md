@@ -180,6 +180,8 @@ streamlit run app.py
 
 Open your browser and navigate to http://localhost:8501.
 
+---
+
 ## 🐳 Docker Support
 
 You can run the entire YouTube Study Assistant (Flask API + Streamlit app) in isolated containers using Docker. This is ideal for easy deployment and avoiding dependency issues.
@@ -244,13 +246,13 @@ docker build -t yt-study-assistant .
 
 This command will:
 
-Copy your project files into the image
+- Copy your project files into the image
 
-Install all required dependencies from requirements.txt
+- Install all required dependencies from requirements.txt
 
-Expose ports for the Flask backend and Streamlit frontend
+- Expose ports for the Flask backend and Streamlit frontend
 
-Set up a container that runs both services
+- Set up a container that runs both services
 
 ### 🚀 Run the Container
 Make sure you have your OpenAI API Key available. Then run:
@@ -275,6 +277,8 @@ Go to http://localhost:8501
 Paste a YouTube video link in the sidebar and click Build Knowledge Base
 
 Ask questions about the video using the chat interface
+
+---
 
 ## 🛠️ Troubleshooting Guide
 
