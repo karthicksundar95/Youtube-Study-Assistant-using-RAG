@@ -141,6 +141,8 @@ YouTube-Study-Assistant/
     ├── rag.py # 🧠 Core logic: YouTube transcript parsing & retrieval-augmented generation 
     ├── requirements.txt # 📦 Python dependencies 
     └── README.md # 📄 Project documentation
+    |__ dockerfile # docker file with instructions
+    |__ start.h # executable function to run the apps in docker
 ```
 ## 📦 Installation & Setup
 
@@ -177,6 +179,102 @@ streamlit run app.py
 ```
 
 Open your browser and navigate to http://localhost:8501.
+
+## 🐳 Docker Support
+
+You can run the entire YouTube Study Assistant (Flask API + Streamlit app) in isolated containers using Docker. This is ideal for easy deployment and avoiding dependency issues.
+
+### 📦 Docker Overview
+
+We use Docker to:
+- Run the Flask API backend  
+- Run the Streamlit frontend  
+- Easily share or deploy the app across systems  
+
+### 🧱 Dockerfile
+
+Ensure your project root contains a `Dockerfile` like this:
+
+```dockerfile
+# Dockerfile
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+ENV FLASK_APP=api.py
+ENV STREAMLIT_SERVER_PORT=8501
+
+EXPOSE 5050
+EXPOSE 8501
+
+CMD ["bash", "start.sh"]
+```
+
+## Start.sh
+This script starts both the Flask API and the Streamlit frontend.
+```
+#!/bin/bash
+# start.sh
+
+# Start the Flask API in the background
+python api.py &
+
+# Start the Streamlit frontend
+streamlit run app.py --server.port 8501
+```
+Make sure it’s executable:
+```chmod +x start.sh```
+
+### 🛠️ How to Run with Docker
+
+You can easily run the entire project inside a Docker container without installing Python or dependencies manually.
+
+#### 1. 🏗️ Build the Docker Image
+
+From the root directory of the project, run the following command:
+
+```bash
+docker build -t yt-study-assistant .
+```
+
+This command will:
+
+Copy your project files into the image
+
+Install all required dependencies from requirements.txt
+
+Expose ports for the Flask backend and Streamlit frontend
+
+Set up a container that runs both services
+
+### 🚀 Run the Container
+Make sure you have your OpenAI API Key available. Then run:
+
+```
+docker run -p 8501:8501 -p 5050:5050 -e OPENAI_API_KEY="your_openai_key" yt-study-assistant
+```
+This will:
+
+- Expose port 8501 for the Streamlit frontend
+
+- Expose port 5050 for the Flask backend
+
+- Pass your API key securely as an environment variable
+
+You can now access the app in your browser at:
+http://localhost:8501
+
+### 🔁 Verify the App
+Go to http://localhost:8501
+
+Paste a YouTube video link in the sidebar and click Build Knowledge Base
+
+Ask questions about the video using the chat interface
 
 ## 🛠️ Troubleshooting Guide
 
